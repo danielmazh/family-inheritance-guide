@@ -4,49 +4,75 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Inheritance - Bank Leumi steps</title>
+<title>Inheritance guide - Bank Leumi</title>
 <style>
   :root { --bg:#f6f5f2; --card:#fff; --ink:#1f2328; --muted:#5f6670; --accent:#1d5fa8; --warn:#fff4d6; --line:#e3e1dc; }
   * { box-sizing:border-box; }
+  html, body { height:100%; }
   body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
-  header { position:sticky; top:0; z-index:5; background:var(--accent); color:#fff; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
-  header h1 { font-size:18px; margin:0; font-weight:600; }
+  header { position:sticky; top:0; z-index:10; background:var(--accent); color:#fff; padding:10px 12px; display:flex; align-items:center; gap:10px; }
+  header h1 { font-size:17px; margin:0; font-weight:600; flex:1; min-width:0; }
+  .icon { background:transparent; border:0; color:#fff; font-size:24px; line-height:1; padding:4px 8px; }
   .langs { display:flex; flex-shrink:0; }
-  .langs button { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.6); border-radius:8px; padding:6px 12px; font-size:15px; margin-inline-start:4px; }
+  .langs button { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.6); border-radius:8px; padding:6px 10px; font-size:15px; margin-inline-start:4px; }
   .langs button.on { background:#fff; color:var(--accent); font-weight:600; }
-  main { max-width:720px; margin:0 auto; padding:16px; }
-  section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-bottom:14px; }
-  h2 { font-size:19px; margin:0 0 10px; color:var(--accent); }
-  h3 { font-size:17px; margin:14px 0 6px; }
+  nav#menu { display:none; position:sticky; top:52px; z-index:9; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 6px 16px rgba(0,0,0,.08); }
+  nav#menu.open { display:block; }
+  nav#menu a { display:block; padding:13px 18px; color:var(--ink); text-decoration:none; border-top:1px solid var(--line); }
+  nav#menu a.on { color:var(--accent); font-weight:600; background:#eef4fb; }
+  main { max-width:720px; margin:0 auto; padding:16px 16px 110px; }
+  .page { display:none; }
+  .page.on { display:block; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px; }
+  h2 { font-size:20px; margin:0 0 12px; color:var(--accent); }
+  h3 { font-size:17px; margin:16px 0 6px; }
   ul, ol { padding-inline-start:22px; margin:6px 0; }
-  li { margin:5px 0; }
-  .key { background:var(--warn); border-radius:10px; padding:10px 12px; margin:8px 0; }
+  li { margin:6px 0; }
+  .key { background:var(--warn); border-radius:10px; padding:10px 12px; margin:8px 0 12px; }
   .muted { color:var(--muted); font-size:14px; }
+  .hello { font-size:24px; font-weight:700; margin:4px 0 12px; color:var(--accent); }
+  .start { display:block; width:100%; margin-top:18px; padding:14px; font-size:18px; font-weight:600; color:#fff; background:var(--accent); border:0; border-radius:12px; }
   table { width:100%; border-collapse:collapse; font-size:16px; }
   td, th { border-bottom:1px solid var(--line); padding:8px 6px; text-align:start; vertical-align:top; }
   th { color:var(--muted); font-weight:600; font-size:14px; }
+  footer { position:fixed; bottom:0; left:0; right:0; background:#fff; border-top:1px solid var(--line); padding:10px 14px calc(10px + env(safe-area-inset-bottom)); display:flex; align-items:center; gap:10px; }
+  footer button { flex:1; padding:12px; font-size:16px; border-radius:10px; border:1px solid var(--accent); background:#fff; color:var(--accent); font-weight:600; }
+  footer button.next { background:var(--accent); color:#fff; }
+  footer button:disabled { opacity:.35; }
+  #count { color:var(--muted); font-size:14px; min-width:44px; text-align:center; }
   [data-lang] { display:none; }
   html[data-show="en"] [data-lang="en"], html[data-show="he"] [data-lang="he"] { display:block; }
-  [data-lang="he"] { direction:rtl; text-align:right; }
+  html[data-show="he"] header, html[data-show="he"] footer, html[data-show="he"] nav#menu, [data-lang="he"] { direction:rtl; text-align:right; }
 </style>
 </head>
 <body>
 <header>
-  <h1 id="title">Inheritance - Bank Leumi</h1>
+  <button class="icon" id="menuBtn" aria-label="Menu" onclick="toggleMenu()">&#9776;</button>
+  <h1 id="title">Inheritance guide</h1>
   <div class="langs">
     <button id="b-en" onclick="setLang('en')">English</button>
     <button id="b-he" onclick="setLang('he')">עברית</button>
   </div>
 </header>
+<nav id="menu"></nav>
 
 <main>
 
 <!-- ============================ ENGLISH ============================ -->
 <div data-lang="en">
 
-<p class="muted">Based on a phone call with the Bank Leumi inheritance center and the bank's follow-up email, 23 Nov 2026. Last updated: 23 Nov 2026.</p>
+<div class="page"><section>
+  <h2>Welcome</h2>
+  <div class="hello">Hello, Lubomirsky family</div>
+  <p>I am Daniel. I made this guide for you, so all of us can finish the inheritance at Bank Leumi together and without mistakes.</p>
+  <p>It explains, step by step, what each heir needs to do, in Israel and abroad, so the bank can divide the estate.</p>
+  <p>Each page is short. Tap <b>Next</b> at the bottom to continue, or tap <b>&#9776;</b> at the top to jump to a topic.</p>
+  <p>If something is not clear, call me or send me a message.</p>
+  <p class="muted">Based on a phone call with the Bank Leumi inheritance center and the bank's email, 23 Nov 2026. Last updated: 23 Nov 2026.</p>
+  <button class="start" onclick="go(1)">Start</button>
+</section></div>
 
-<section>
+<div class="page"><section>
   <h2>The most important points</h2>
   <div class="key"><b>The bank divides the estate only after it receives signed documents from ALL heirs</b>, including the heirs abroad.</div>
   <ul>
@@ -55,9 +81,9 @@
     <li>Original documents signed abroad are <b>mailed to a contact person in Israel</b>. They show them at a Leumi branch near them.</li>
     <li><b>Do not leave the originals at the branch.</b> Ask the branch to make copies.</li>
   </ul>
-</section>
+</section></div>
 
-<section>
+<div class="page"><section>
   <h2>Heirs abroad - what to do</h2>
   <ol>
     <li>Fill in the <b>Heirs' Instructions</b> form.</li>
@@ -71,32 +97,19 @@
     <li>Fill in <b>section 7</b> of the Heirs' Instructions form.</li>
     <li>Attach a <b>renunciation affidavit</b> or a <b>distribution agreement</b>. In Israel it is verified by a lawyer. Abroad: by a consul, or a notary + Apostille.</li>
   </ul>
-</section>
+</section></div>
 
-<section>
+<div class="page"><section>
   <h2>In Israel</h2>
   <ul>
     <li>The contact person brings the originals to any Leumi branch near them, and asks for copies.</li>
     <li>A <b>person with power of attorney</b> can sign the documents for one or more heirs. Then they must also bring the <b>original power of attorney + their own ID</b>.</li>
     <li>Heirs in Israel sign the same Heirs' Instructions form. Ask the bank if they can sign it in front of a banker at the branch.</li>
   </ul>
-</section>
+</section></div>
 
-<section>
-  <h2>Next steps</h2>
-  <table>
-    <tr><th>#</th><th>What</th><th>Who</th></tr>
-    <tr><td>1</td><td>Send the Heirs' Instructions form (English) and the transfer form to every heir</td><td>Daniel</td></tr>
-    <tr><td>2</td><td>Choose one contact person in Israel and send everyone their address</td><td>Family</td></tr>
-    <tr><td>3</td><td>Fill in the form. Cover every investment in the account and your share</td><td>Each heir</td></tr>
-    <tr><td>4</td><td>Abroad: sign at a consul or notary + Apostille. Attach 2 IDs, transfer form, account letter or check copy</td><td>Each heir abroad</td></tr>
-    <tr><td>5</td><td>Mail the originals to the contact person in Israel</td><td>Each heir abroad</td></tr>
-    <tr><td>6</td><td>Bring all originals to the branch, ask for copies, take the originals back</td><td>Contact person</td></tr>
-  </table>
-</section>
-
-<section>
-  <h2>Do we need a lawyer or a power of attorney?</h2>
+<div class="page"><section>
+  <h2>Do we need a lawyer?</h2>
   <p><b>Probably not.</b> <span class="muted">(Our own recommendation, not the bank's.)</span></p>
   <ul>
     <li>Each heir abroad can sign the <b>bank's own form</b> at a notary or consul. Then no power of attorney is needed, and no lawyer is needed to write anything.</li>
@@ -108,7 +121,10 @@
     <li>We can write it ourselves. Send a draft to the bank and get approval <b>before</b> anyone signs.</li>
     <li>Write it in Hebrew + English in one document. Each heir signs their own copy in their country. The attorney brings all the originals.</li>
   </ul>
-  <h3>The notary abroad - how it works</h3>
+</section></div>
+
+<div class="page"><section>
+  <h2>The notary abroad</h2>
   <ul>
     <li>A notary checks <b>who you are and your signature</b>, not the content. They add their own certificate page and stamp.</li>
     <li>Then an <b>Apostille</b> from that country's authority makes the document valid in Israel. If the country is not in the Apostille convention, use the Israeli consul.</li>
@@ -117,16 +133,39 @@
     <li>Cost: in the USA notaries are cheap; in Europe and the UK they cost more. Compare with the consul.</li>
     <li>Online notary: the bank wants originals, so ask the bank first.</li>
   </ul>
-</section>
+</section></div>
+
+<div class="page"><section>
+  <h2>Next steps</h2>
+  <table>
+    <tr><th>#</th><th>What</th><th>Who</th></tr>
+    <tr><td>1</td><td>Send the Heirs' Instructions form (English) and the transfer form to every heir</td><td>Daniel</td></tr>
+    <tr><td>2</td><td>Choose one contact person in Israel and send everyone their address</td><td>Family</td></tr>
+    <tr><td>3</td><td>Fill in the form. Cover every investment in the account and your share</td><td>Each heir</td></tr>
+    <tr><td>4</td><td>Abroad: sign at a consul or notary + Apostille. Attach 2 IDs, transfer form, account letter or check copy</td><td>Each heir abroad</td></tr>
+    <tr><td>5</td><td>Mail the originals to the contact person in Israel</td><td>Each heir abroad</td></tr>
+    <tr><td>6</td><td>Bring all originals to the branch, ask for copies, take the originals back</td><td>Contact person</td></tr>
+  </table>
+  <p class="muted" style="margin-top:14px">Questions? Call or message Daniel.</p>
+</section></div>
 
 </div>
 
 <!-- ============================ HEBREW ============================ -->
 <div data-lang="he">
 
-<p class="muted">לפי שיחה עם מוקד העיזבונות של בנק לאומי ומייל ההמשך של הבנק, 23.11.2026. עדכון אחרון: 23.11.2026.</p>
+<div class="page"><section>
+  <h2>ברוכים הבאים</h2>
+  <div class="hello">שלום משפחת לובומירסקי</div>
+  <p>אני דניאל. הכנתי לכם את המדריך הזה, כדי שנוכל לסיים יחד ובלי טעויות את הטיפול בירושה בבנק לאומי.</p>
+  <p>הוא מסביר צעד אחר צעד מה כל יורש צריך לעשות, בארץ ובחו"ל, כדי שהבנק יחלק את העיזבון.</p>
+  <p>כל עמוד קצר. לחצו <b>הבא</b> למטה כדי להמשיך, או <b>&#9776;</b> למעלה כדי לקפוץ לנושא.</p>
+  <p>אם משהו לא ברור, התקשרו אליי או שלחו לי הודעה.</p>
+  <p class="muted">לפי שיחה עם מוקד העיזבונות של בנק לאומי ומייל הבנק, 23.11.2026. עדכון אחרון: 23.11.2026.</p>
+  <button class="start" onclick="go(1)">מתחילים</button>
+</section></div>
 
-<section>
+<div class="page"><section>
   <h2>הנקודות החשובות</h2>
   <div class="key"><b>הבנק מחלק את העיזבון רק אחרי שהוא מקבל מסמכים חתומים מכל היורשים</b>, כולל היורשים בחו"ל.</div>
   <ul>
@@ -135,9 +174,9 @@
     <li>מסמכי מקור שנחתמו בחו"ל או מול עו"ד <b>נשלחים לאיש קשר בארץ</b>. הוא מציג אותם בסניף לאומי קרוב אליו.</li>
     <li><b>לא להשאיר את מסמכי המקור בסניף.</b> לבקש שיצלמו אותם.</li>
   </ul>
-</section>
+</section></div>
 
-<section>
+<div class="page"><section>
   <h2>יורשים בחו"ל - מה עושים</h2>
   <ol>
     <li>ממלאים את טופס <b>הוראות יורשים</b>.</li>
@@ -151,32 +190,19 @@
     <li>ממלא את <b>סעיף 7</b> בטופס הוראות יורשים.</li>
     <li>מצרף <b>תצהיר הסתלקות</b> או <b>הסכם חלוקה</b>. בארץ: מאומת בידי עו"ד. בחו"ל: מול קונסול, או נוטריון + אפוסטיל.</li>
   </ul>
-</section>
+</section></div>
 
-<section>
+<div class="page"><section>
   <h2>בארץ</h2>
   <ul>
     <li>איש הקשר מביא את המקורים לסניף לאומי קרוב אליו, ומבקש שיצלמו אותם.</li>
     <li><b>מיופה כוח</b> יכול לחתום על המסמכים בשם יורש אחד או יותר. אז צריך לצרף גם <b>ייפוי כוח מקורי + תעודה מזהה של מיופה הכוח</b>.</li>
     <li>יורשים בארץ חותמים על אותו טופס הוראות יורשים. לשאול את הבנק אם אפשר לחתום מול בנקאי בסניף.</li>
   </ul>
-</section>
+</section></div>
 
-<section>
-  <h2>הצעדים הבאים</h2>
-  <table>
-    <tr><th>#</th><th>מה</th><th>מי</th></tr>
-    <tr><td>1</td><td>לשלוח לכל יורש את טופס הוראות יורשים (באנגלית לחו"ל) ואת טופס המט"ח</td><td>דניאל</td></tr>
-    <tr><td>2</td><td>לבחור איש קשר אחד בארץ ולשלוח לכולם את הכתובת שלו</td><td>המשפחה</td></tr>
-    <tr><td>3</td><td>למלא את הטופס: כל ההשקעות בחשבון והחלק של היורש</td><td>כל יורש</td></tr>
-    <tr><td>4</td><td>בחו"ל: לאמת מול קונסול או נוטריון + אפוסטיל. לצרף 2 תעודות, טופס מט"ח, אישור חשבון או צילום שיק</td><td>כל יורש בחו"ל</td></tr>
-    <tr><td>5</td><td>לשלוח את המקורים לאיש הקשר בארץ</td><td>כל יורש בחו"ל</td></tr>
-    <tr><td>6</td><td>להביא את כל המקורים לסניף, לבקש צילום, לקחת את המקורים חזרה</td><td>איש הקשר</td></tr>
-  </table>
-</section>
-
-<section>
-  <h2>צריך עורך דין או ייפוי כוח?</h2>
+<div class="page"><section>
+  <h2>צריך עורך דין?</h2>
   <p><b>כנראה שלא.</b> <span class="muted">(המלצה שלנו, לא של הבנק.)</span></p>
   <ul>
     <li>כל יורש בחו"ל יכול לחתום על <b>טופס הבנק עצמו</b> מול נוטריון או קונסול. כך לא צריך ייפוי כוח, ולא צריך עו"ד שינסח משהו.</li>
@@ -188,7 +214,10 @@
     <li>אפשר לנסח לבד. לשלוח טיוטה לבנק ולקבל אישור <b>לפני</b> שמישהו חותם.</li>
     <li>נוסח עברית + אנגלית במסמך אחד. כל יורש חותם על עותק משלו במדינה שלו. מיופה הכוח מביא את כל המקורים.</li>
   </ul>
-  <h3>הנוטריון בחו"ל - איך זה עובד</h3>
+</section></div>
+
+<div class="page"><section>
+  <h2>הנוטריון בחו"ל</h2>
   <ul>
     <li>נוטריון מאמת <b>זהות וחתימה</b>, לא תוכן. הוא מוסיף דף אישור משלו ומחתים.</li>
     <li>אחר כך <b>אפוסטיל</b> מהרשות של אותה מדינה הופך את המסמך לתקף בישראל. מדינה שלא חתומה על אמנת האפוסטיל: קונסול ישראלי.</li>
@@ -197,23 +226,75 @@
     <li>מחיר: בארה"ב נוטריון זול, באירופה ובבריטניה יקר יותר. להשוות לקונסול.</li>
     <li>נוטריון אונליין: הבנק דורש מקורים, אז לשאול את הבנק לפני.</li>
   </ul>
-</section>
+</section></div>
+
+<div class="page"><section>
+  <h2>הצעדים הבאים</h2>
+  <table>
+    <tr><th>#</th><th>מה</th><th>מי</th></tr>
+    <tr><td>1</td><td>לשלוח לכל יורש את טופס הוראות יורשים (באנגלית לחו"ל) ואת טופס המט"ח</td><td>דניאל</td></tr>
+    <tr><td>2</td><td>לבחור איש קשר אחד בארץ ולשלוח לכולם את הכתובת שלו</td><td>המשפחה</td></tr>
+    <tr><td>3</td><td>למלא את הטופס: כל ההשקעות בחשבון והחלק של היורש</td><td>כל יורש</td></tr>
+    <tr><td>4</td><td>בחו"ל: לאמת מול קונסול או נוטריון + אפוסטיל. לצרף 2 תעודות, טופס מט"ח, אישור חשבון או צילום שיק</td><td>כל יורש בחו"ל</td></tr>
+    <tr><td>5</td><td>לשלוח את המקורים לאיש הקשר בארץ</td><td>כל יורש בחו"ל</td></tr>
+    <tr><td>6</td><td>להביא את כל המקורים לסניף, לבקש צילום, לקחת את המקורים חזרה</td><td>איש הקשר</td></tr>
+  </table>
+  <p class="muted" style="margin-top:14px">שאלות? התקשרו או שלחו הודעה לדניאל.</p>
+</section></div>
 
 </div>
 
 </main>
 
+<footer>
+  <button id="prev" onclick="go(cur-1)"></button>
+  <span id="count"></span>
+  <button id="next" class="next" onclick="go(cur+1)"></button>
+</footer>
+
 <script>
+  var lang = 'en', cur = 0;
+  var T = { en:{title:'Inheritance guide', prev:'Back', next:'Next', done:'Done'},
+            he:{title:'מדריך ירושה', prev:'הקודם', next:'הבא', done:'סיום'} };
+  function pages() { return document.querySelectorAll('[data-lang="'+lang+'"] .page'); }
+  function render() {
+    var ps = pages(), n = ps.length;
+    cur = Math.max(0, Math.min(cur, n-1));
+    ps.forEach(function(p,i){ p.classList.toggle('on', i === cur); });
+    document.getElementById('prev').textContent = T[lang].prev;
+    document.getElementById('next').textContent = cur === n-1 ? T[lang].done : T[lang].next;
+    document.getElementById('prev').disabled = cur === 0;
+    document.getElementById('next').disabled = cur === n-1;
+    document.getElementById('count').textContent = (cur+1) + ' / ' + n;
+    var m = document.getElementById('menu'); m.innerHTML = '';
+    ps.forEach(function(p,i){
+      var a = document.createElement('a'); a.href = '#'+i;
+      a.textContent = (i+1) + '. ' + p.querySelector('h2').textContent;
+      if (i === cur) a.className = 'on';
+      a.onclick = function(e){ e.preventDefault(); go(i); };
+      m.appendChild(a);
+    });
+  }
+  function go(i) {
+    cur = i; document.getElementById('menu').classList.remove('open');
+    if (location.hash !== '#'+cur) history.pushState(null, '', location.pathname + location.search + '#' + cur);
+    render(); window.scrollTo(0,0);
+  }
+  function toggleMenu() { document.getElementById('menu').classList.toggle('open'); }
   function setLang(l) {
+    lang = l;
     document.documentElement.setAttribute('data-show', l);
     document.documentElement.lang = l;
     document.getElementById('b-en').classList.toggle('on', l === 'en');
     document.getElementById('b-he').classList.toggle('on', l === 'he');
-    document.getElementById('title').textContent = l === 'he' ? 'ירושה - בנק לאומי' : 'Inheritance - Bank Leumi';
+    document.getElementById('title').textContent = T[l].title;
     try { localStorage.setItem('lang', l); } catch (e) {}
+    render();
   }
+  window.addEventListener('popstate', function(){ cur = parseInt(location.hash.slice(1)) || 0; render(); window.scrollTo(0,0); });
   var q = new URLSearchParams(location.search).get('lang');
   var saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  cur = parseInt(location.hash.slice(1)) || 0;
   setLang(q === 'he' || q === 'en' ? q : (saved || 'en'));
 </script>
 </body>
